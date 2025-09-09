@@ -45,5 +45,20 @@ class Pr003 {
        System.out.println("тип данных int имеет разрядность 32 бита");
        System.out.println("тип данных long имеет разрядность 64 бита");
 
+       long long_var = 4000000000L;
+
+       //пример использования типа данных long
+       int int_var = 2000000000;
+       long_var =(long) int_var*int_var;
+       int_var = int_var*int_var;
+       System.out.println("значение int_var: " + int_var);
+      System.out.println("значение long_var: " + long_var);
+
+      double a = 3.0, b = 4.0;
+
+      double c = Math.sqrt(a*a +b*b);
+
+      System.out.println("Длинна гипотенузы: " + c);
+
     }
 }
