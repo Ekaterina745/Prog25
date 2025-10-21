@@ -246,7 +246,65 @@ class Pr009 {
 			 for (i=0; i< nums5.length; i++)
 				 System.out.print(nums5[i] + " ");
 			 System.out.println();
+			
+			//Разновидность цикла for "for - each"
+			  System.out.println();
 
+			for(int x: nums5)
+				 System.out.print(x + " ");
+			 System.out.println();
+			//использование переменной цикла " for - each" для изменения значений внутри массива 
+			i = 0;
+			 for(int x: nums5) {
+				x = 15 + i;
+				nums5[i] = x;
+				  System.out.print("Новое содержимое массива: " + x + " ");
+				  i++;
+		 }
 
+		 System.out.println();
+		  for(int x: nums5)
+			  System.out.print(x + " ");
+		  System.out.println();
+
+		  //суммирование первых пяти элементов массива 
+		 int sum = 0;
+		 i = 0;
+		  for(int x: nums5) {
+			System.out.println("Значение: " + x);
+			sum += x;
+			i++;
+			if(i == 5)
+				break;
+		  }
+		   System.out.println("Сумма первых пяти элементов nums5: " + sum);
+
+		   //использование "for - each" для работы с многомерными массивами
+		   System.out.println();
+		   sum = 0;
+		   for(int x[] : table3) {
+			for(int y : x) {
+				 System.out.println("Значение: " + y);
+				 sum += y;
+			}
+		   }
+		   System.out.println("Сумма элементов двумерного массива table3: " + sum);
+		   System.out.println();
+
+		   //Поиск в массиве при помощи цикла "for - each"
+		   int nums6[] = {103, 42, 58, 31, 50, 104, 46, 87};
+		   int va1 = 31;
+		   boolean found = false;
+
+		   for(int x : nums6) {
+			if(x == va1) {
+				found = true;
+				break;
+			}
+		   }
+		   if(found)
+			    System.out.println("Значение " + va1 + " найдено в nums6");
+		   else
+			    System.out.println("Значение " + va1 + " не найдено в nums6");
 	}
 }
