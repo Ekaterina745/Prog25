@@ -1,6 +1,6 @@
 class Queue {
-	char q[]; //Ссылка на массив, хнарящий предметы очереди
-	int putloc, getloc; //Указатели на начало и на конец очееди
+	private	char q[]; //Ссылка на массив, хнарящий предметы очереди
+	private	int putloc, getloc; //Указатели на начало и на конец очееди
 	
 	Queue(int size) {
 		q = new char[size+1]; //выделение памяти для массива
@@ -68,10 +68,16 @@ class QDemo {
 			   }
 
 			for(i = 0; i < 5; i++) {
-				 System.out.print("Попытка сохранить" + (char) ('Я' - i));
+				 System.out.print("Попытка сохранить " + (char) ('Я' - i));
 
 				 smallQ.put((char) ('Я' - i));
 				  System.out.println();
+				  //попытка прямого доступа к закрытым элементам очереди через индекс
+				  Queue test = new Queue(10);
+				  //test.q[0] = 'A';
+				  //test.puloc = 'B';
+				  test.put('A');
+				  System.out.println("Изменение символа из очереди test" + test.get());
 			}	
 		  }
 	}
