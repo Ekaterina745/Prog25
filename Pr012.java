@@ -122,6 +122,41 @@ class ErrorInfo {
 			return new Err("неверное значение ошибки", 0);
 	}
 }
+class Overload {
+	void ovlDemo() {
+		System.out.println("метод запуска бкз параметров");
+	}
+	void ovlDemo(int a) {
+		System.out.println("Один параметр: " + a);	
+	}
+
+	int ovlDemo(int a, int b) {
+		 System.out.println("Два параметра: " + a + " " + b);
+		 return a+b;
+	}
+
+	double ovlDemo(double a, double b) {
+		 System.out.println("Два вещественных параметра: " + a + " " + b);
+		 return a+b;
+	}
+}
+class Square {
+	//вычисление площади квадрата
+	 int square(int a) {
+		 System.out.println("Площадь квадрата со стороной " + a + " равна " + a*a);
+		 return a*a;
+	 }
+	 //вычисление площади круга
+	  double square(double r) {
+		  System.out.println("Площадь круга с радиусом " + r + " равна " + 3.14*r*r);
+		  return 3.14*r*r;
+	 }
+	 //вычисление площади прямоугольника
+	 int square(int a, int b){
+	System.out.println("Площадь прямоугольника со сторонами " + a + " и " + b + " равна " + a*b);
+		  return a*b;
+	 }
+}
 class Pr012 {
 	public static void main(String args[]) {
 		MyClass ob = new MyClass();
@@ -190,6 +225,33 @@ class Pr012 {
 
 		 e = err1.getErrorInfo(7);
 		 System.out.println(e.msg + " уровень: " + e.severity);
-	}
 
+		 //Перегрузка методов ovlDemo()
+		  System.out.println();
+		 Overload ob4 = new Overload();
+		 int resI;
+		 double resD;
+
+		 ob4.ovlDemo();
+		 System.out.println();
+
+		 ob4.ovlDemo(3);
+		 System.out.println();
+	
+		 ob4.ovlDemo(7,8);
+		 System.out.println("Возвращаемое значение: " + ob4.ovlDemo(7,8));
+
+		 ob4.ovlDemo(2.7,3.4);
+		 System.out.println("Возвращаемое значение: " + ob4.ovlDemo(2.7,3.4));
+
+		 //Использование перегружаемого метода square() для вычисление площади различных фигур
+		  System.out.println();
+		  Square ob5 = new Square();
+		  //Вычисление площади квадрата со стороной 4
+		  int S_sq = ob5.square(4);
+		  //вычисление площпди прямоугольника со сторонами 4 и 5
+		  int S_rect = ob5.square(4,5);
+		  // вычисление площади круга с радиусом 3.0
+		  double S_ocr = ob5.square(3.0);
+	}
 }
