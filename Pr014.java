@@ -81,8 +81,10 @@ class VarArgs {
 		for (int i = 0; i < v.length; i++)
 			System.out.println(" аргумент " + i + ": " + v[i]);
 		System.out.println();
-
-
+	
+	//Неодназнаяная версия метода vaTest3:
+	//static void vaTest3(int v1, int ... v ) {
+	//Нельзя в вкачестве перегружаемой версии, если определен метод vaTest3(int ...v)
 	}
 }
 class Pr014 {
@@ -102,6 +104,9 @@ class Pr014 {
 		VarArgs.vaTest3("Строка", 30, 20);
 		VarArgs.vaTest3(false, true, false);
 		System.out.println();
+		//Вызов перегружаемого метода без аргументов приведоит к неоднозначности 
+		//VarArgs.vaTest3(); - ошибка компиляции, так как возможен выбор любого метода с параметрами int или boolea
+		//n
 
 		int[] x = {3, 3, 5, 1, 60, 40, 14, 9};
 		Outer outOb = new Outer(x);
