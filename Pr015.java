@@ -1,21 +1,47 @@
 //Суперкласс (родительский для всех подклассов двумерных фигур )
 class TwoDShape {
-	double width;
-	double height;
+	private double width;
+	private double height;
 	private String color = "Черный";
+	//методы доступа к закрытым переменным экземпляра
+	double getWidth() {
+		return width;
+	}
+	double getHeight() {
+		return height;
+	}
+	void setWidth(double w) {
+		if (w < 21)
+			width = w;
+		else 
+			System.out.println("Ширина фигуры должна быть меньше 21 см");	
+	}
+
+	void setHeight(double h) {
+		if (h < 29)
+			height = h;
+		else 
+			System.out.println("Ширина фигуры должна быть меньше 29 см");	
+	}
+
 	void showDim() {
 		System.out.println("Ширина двумерной фигуры: " + width + "\nВысота двумерной фигуры: " + height);
 	}
+
 	String getColor() {
 		System.out.println("Цвет двумерной фигуры: " + color);
 		return color;
+	}
+
+	void setColor(String c) {
+		color = c;
 	}
 }
 //Подкласс суперкласса  TwoDShape (дочерний класс) для описания треугольников 
 class Triangle extends TwoDShape {
 	String style;
 	double area() {
-		return width * height / 2;
+		return getWidth() * getHeight() / 2;
 	}
 	void showStyle() {
 		System.out.println("Стиль трекгольников: " + style);
@@ -25,11 +51,11 @@ class Triangle extends TwoDShape {
 class Rectangle extends TwoDShape {
 	//метод, проверяющий являеться ли прямокгольник квадратом
 	boolean isSquare() {
-		if(width == height) return true;
+		if(getWidth() == getHeight()) return true;
 		return false;
 	}
 	double area() {
-		return width * height;
+		return getWidth() * getHeight();
 	}
 	//Подкласс не имеет доступа к закрытым переменным супер класса
 	/*
@@ -44,17 +70,17 @@ class Pr015 {
 	public static void main(String[] args) {
 		Triangle t1 = new Triangle();
 		Triangle t2 = new Triangle();
-		t1.width = 5.1;
-		t1.height = 4.3;
+		t1.setWidth(5.1);
+		t1.setHeight(4.3);
 		t1.style = "Пунктирный";
 
-		t2.width = 7.1;
-		t2.height = 4.3;
+		t2.setWidth(7.1);
+		t2.setHeight(4.3);
 		t2.style = "Сплошной";
 
 		TwoDShape s1 = new TwoDShape();
-		s1.width = 10.0;
-		s1.height = 6.2;
+		s1.setWidth(10.0);
+		s1.setHeight(6.2);
 
 		System.out.println("Информация об обьекте t1: ");
 		t1.showStyle();
@@ -79,8 +105,8 @@ class Pr015 {
 		System.out.println();
 
 		Rectangle r1 = new Rectangle();
-		r1.width = 5.1;
-		r1.height = 4.3;
+		r1.setWidth(35.1);
+		r1.setHeight(4.3);
 
 		System.out.println("Информация об обьекте r1: ");
 		r1.showDim();
