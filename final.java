@@ -22,10 +22,6 @@ class B extends A {
 	//void meth2()
 	//System.out.println("Метод meth2() не допускает переопределения ");
 }
-b = new B()
-a = b
-a.meth()
-a.meth2()
 final class C {
     int i=10;
 }
@@ -50,5 +46,3 @@ class ErrorMsg {
         return "Неизвестная ошибка";
     }
 }
-err.getErrorMsg(err.DISKERR)
-err.getErrorMsg(err.OUTERR)
