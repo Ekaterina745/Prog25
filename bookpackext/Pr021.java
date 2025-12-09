@@ -1,14 +1,15 @@
 package bookpackext;
+import bookpack.*;
 
-class Pr020 {
+class Pr021 {
 	public static void main(String[] args) {
-		bookpack.Book[] books = new bookpack.Book[5];
+		Book[] books = new Book[5];
 
-		books[0] = new bookpack.Book("Портрет Дориана Грея", "О. Уайлд", 1989);
-		books[1] = new bookpack.Book("Приетупление и наказание", "Ф.М. Достоевский", 1971);
-		books[2] = new bookpack.Book("Мастер и Маргарита", "М.А. Булгаков", 1981);
-		books[3] = new bookpack.Book("Оно", "С. Кинг", 1986);
-		books[4] = new bookpack.Book("Мартин Иден", "Дж. Лондон", 1927);
+		books[0] = new Book("Портрет Дориана Грея", "О. Уайлд", 1989);
+		books[1] = new Book("Приетупление и наказание", "Ф.М. Достоевский", 1971);
+		books[2] = new Book("Мастер и Маргарита", "М.А. Булгаков", 1981);
+		books[3] = new Book("Оно", "С. Кинг", 1986);
+		books[4] = new Book("Мартин Иден", "Дж. Лондон", 1927);
 
 		for(int i=0; i < books.length; i++)
 			books[i].show();
